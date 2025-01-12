@@ -1,13 +1,19 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Code2 } from 'lucide-react';
+import { Code2, Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { useScrollTo } from '../hooks/useScrollTo';
+import { useScrollToTop } from '../hooks/useScrollToTop';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export function Header() {
+  useScrollToTop();
   const location = useLocation();
   const scrollTo = useScrollTo();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
+    { name: 'Главная', path: '/' },
     { name: 'Программа', path: '/roadmap' },
     { name: 'Цены', path: '/pricing' },
     { name: 'Smart-Start', path: '/smart-start' },
@@ -22,6 +28,7 @@ export function Header() {
         window.location.href = path;
       }
     }
+    setIsMenuOpen(false);
   };
 
   return (
@@ -36,7 +43,7 @@ export function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
-                style={{color: item.name === 'Smart-Start' ? '#9333ea': ''}}
+                style={{color: item.name === 'Smart-Start' ? '#b68ade': ''}}
                 key={item.name}
                 to={item.path.startsWith('/#') ? '#' : item.path}
                 onClick={() => handleNavClick(item.path)}
@@ -47,15 +54,65 @@ export function Header() {
             ))}
             <ThemeToggle />
           </nav>
-          
-          <Link 
-            to="/contacts"
-            className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors"
-          >
-            Записаться
-          </Link>
+
+          <div className="flex items-center space-x-4">
+            <Link 
+              to="/contacts"
+              className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+            >
+              Записаться
+            </Link>
+            
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-800/50 transition-colors"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6 text-gray-600 dark:text-gray-300" />
+              ) : (
+                <Menu className="h-6 w-6 text-gray-600 dark:text-gray-300" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden border-t border-purple-100 dark:border-purple-800"
+          >
+            <motion.nav
+              initial={{ y: -20 }}
+              animate={{ y: 0 }}
+              exit={{ y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="py-4 px-4 space-y-4 bg-white dark:bg-gray-900"
+            >
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path.startsWith('/#') ? '#' : item.path}
+                  onClick={() => handleNavClick(item.path)}
+                  className="block py-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                  style={{
+                    color: item.name === 'Smart-Start' ? '#b68ade' : ''
+                  }}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="pt-2 border-t border-purple-100 dark:border-purple-800">
+                <ThemeToggle />
+              </div>
+            </motion.nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

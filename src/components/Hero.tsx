@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { AnimatedBackground } from './AnimatedBackground';
 import { useScrollTo } from '../hooks/useScrollTo';
+import { Link } from 'react-router-dom';
 
 export function Hero() {
   const scrollTo = useScrollTo();
@@ -27,12 +28,13 @@ export function Hero() {
               <span>Начать обучение</span>
               <ArrowRight className="h-5 w-5" />
             </button>
-            <button 
-              onClick={() => scrollTo('программа')}
+
+						<Link 
+            to="/smart-start"
               className="border-2 border-purple-600 text-purple-600 dark:text-purple-400 dark:border-purple-400 px-8 py-3 rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/50 transition-colors"
-            >
-              Узнать больше
-            </button>
+          >
+            Узнать больше
+          </Link>
           </div>
         </div>
       </div>

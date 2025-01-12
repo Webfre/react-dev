@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface PricingCardProps {
   title: string;
@@ -41,10 +42,13 @@ export function PricingCard({ title, price, description, features, result, isPop
         <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Результат:</h4>
         <p className="text-gray-600 dark:text-gray-300">{result}</p>
       </div>
-      
-      <button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-4 rounded-lg transition-colors">
-        Записаться на курс
-      </button>
+			
+			<Link 
+				to="/contacts"
+				className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-4 rounded-lg transition-colors"
+			>
+				Записаться на курс
+      </Link>
     </div>
   );
 }

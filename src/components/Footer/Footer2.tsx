@@ -70,14 +70,14 @@ export function Footer2() {
           </div>
 
           {/* Social Links */}
-          <div className="text-center mb-8">
+          {/* <div className="text-center mb-8">
             <h3 className="text-[#9e8dfd] mb-4 text-sm uppercase tracking-wider">Мы тут.</h3>
             <div className="flex justify-center space-x-4">
               <Facebook  className="w-5 h-5  hover:text-[#9e8dfd] transition-colors cursor-pointer dark:text-gray-100" />
               <Linkedin  className="w-5 h-5  hover:text-[#9e8dfd] transition-colors cursor-pointer dark:text-gray-100" />
               <Twitter  className="w-5 h-5  hover:text-[#9e8dfd] transition-colors cursor-pointer dark:text-gray-100" />
             </div>
-          </div>
+          </div> */}
 
           {/* Bottom section */}
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, MessageCircle, Send } from 'lucide-react';
-import { ContactForm } from '../components/ContactForm';
+import { Mail, Phone, MessageCircle, Send, AppWindow} from 'lucide-react';
+import Qrtg from '../../public/qrtg.png';
 
 const contactInfo = [
   {
@@ -16,17 +16,19 @@ const contactInfo = [
     content: 'info@reactpro.ru',
     link: 'mailto:info@reactpro.ru'
   },
-  {
-    icon: MapPin,
-    title: 'Адрес',
-    content: 'г. Москва, ул. Программистов, 42',
-    link: 'https://maps.google.com'
+	{
+    icon: AppWindow,
+    title: 'Приложение FocusCourse',
+    content: '@devcourse.ru',
+    link: 'https://t.me/devcourseru',
+		qrCode: Qrtg
   },
   {
     icon: MessageCircle,
     title: 'Telegram',
-    content: '@reactpro',
-    link: 'https://t.me/reactpro'
+    content: '@devcourse.ru',
+    link: 'https://t.me/devcourseru',
+		qrCode: Qrtg
   }
 ];
 
@@ -88,6 +90,10 @@ export function ContactsPage() {
                       {contact.content}
                     </p>
                   </div>
+									
+										{contact.qrCode && (
+											<img  className="hidden md:block"  style={{paddingLeft: '60px'}} width={200} src={Qrtg} alt="" title='Наведите камерой смартфона на qr-код для перехода в телеграмм канал' />
+										)}
                 </div>
               </motion.a>
             );

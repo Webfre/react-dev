@@ -6,7 +6,7 @@ import { RoadmapSection } from '../components/LearningRoadmap/RoadmapSection';
 import { Projects } from '../components/Projects';
 import { ChartSection } from '../components/SalaryChart/ChartSection';
 import { FAQ } from '../components/FAQ';
-import { Testimonials } from '../components/Testimonials';
+// import { Testimonials } from '../components/Testimonials';
 import { ContactForm } from '../components/ContactForm';
 
 export function HomePage() {
@@ -20,7 +20,7 @@ export function HomePage() {
       <Projects />
       <ChartSection />
       <FAQ />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <ContactForm />
     </main>
   );

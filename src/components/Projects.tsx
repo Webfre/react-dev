@@ -1,41 +1,25 @@
-import React from 'react';
+import im1 from '../../public/image.png';
+import im2 from '../../public/image2.png';
+import im3 from '../../public/image3.png';
 
 const projects = [
   {
     title: 'Social Media Dashboard',
     description: 'Создание современной социальной платформы с React и Redux',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80',
+    image: im1,
     tags: ['React', 'Redux', 'TypeScript'],
   },
   {
     title: 'E-commerce Platform',
     description: 'Полноценный интернет-магазин с корзиной и оплатой',
-    image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=500&q=80',
+    image: im2,
     tags: ['React', 'Redux', 'Stripe'],
   },
   {
     title: 'Task Management App',
     description: 'Система управления задачами с drag-and-drop интерфейсом',
-    image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=500&q=80',
+    image: im3,
     tags: ['React', 'DnD', 'TypeScript'],
-  },
-  {
-    title: 'Real-time Chat',
-    description: 'Мессенджер с поддержкой групповых чатов и файлов',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=80',
-    tags: ['React', 'WebSocket', 'Firebase'],
-  },
-  {
-    title: 'Streaming Platform',
-    description: 'Стриминговый сервис для просмотра видео контента',
-    image: 'https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&w=500&q=80',
-    tags: ['React', 'Redux', 'Video API'],
-  },
-  {
-    title: 'AI Image Generator',
-    description: 'Приложение для генерации изображений с помощью ИИ',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=500&q=80',
-    tags: ['React', 'AI API', 'Canvas'],
   },
 ];
 

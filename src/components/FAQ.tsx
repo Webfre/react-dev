@@ -1,4 +1,3 @@
-import React from 'react';
 import { Plus, Minus } from 'lucide-react';
 import { useFAQ } from '../hooks/useFAQ';
 
@@ -17,7 +16,7 @@ const faqItems = [
   },
   {
     question: 'Будет ли помощь с трудоустройством?',
-    answer: 'Да, мы помогаем составить резюме, готовим к собеседованиям и рекомендуем вас нашим партнерам.',
+    answer: 'Да, мы помогаем составить резюме и готовим к собеседованиям.',
   },
   {
     question: 'Какие проекты я смогу создавать после курса?',

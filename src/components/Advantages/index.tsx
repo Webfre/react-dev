@@ -30,7 +30,7 @@ const mainAdvantages = [
   },
   {
     icon: TrendingUp,
-    title: 'Повышение квалификации до уровня мидл/мидл++/синьор',
+    title: 'Повышение квалификации до уровня Junior/Junior+ и Middle',
     description: 'Углубленное изучение дополнительных технологий и практик разработки',
     highlight: true
   }
@@ -38,9 +38,7 @@ const mainAdvantages = [
 
 const features = [
   { icon: Infinity, title: 'Полный пожизненный доступ' },
-  { icon: Subtitles, title: 'Встроенные субтитры' },
   { icon: Volume2, title: 'Звуковое описание в существующих аудиозаписях' },
-  { icon: Award, title: 'Сертификат об окончании' },
   { icon: Video, title: 'Видео по запросу' },
   { icon: Code2, title: 'Упражнения по написанию кода' },
   { icon: TestTube, title: 'Практические тесты' },

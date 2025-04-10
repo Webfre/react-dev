@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
+import { sendToTelegram } from '../hooks/sendBot';
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,7 +11,8 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    const {name, email, message} = formData;
+    sendToTelegram(name, email, message);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

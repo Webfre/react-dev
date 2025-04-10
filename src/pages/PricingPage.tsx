@@ -1,44 +1,7 @@
 import { motion } from 'framer-motion';
 import { PricingCard } from '../components/PricingCard';
 import { CreditCard } from 'lucide-react';
-
-const courses = [
-  {
-    title: 'Начальный (Junior Frontend Developer)',
-    price: '80 000',
-    description: 'Этот курс предназначен для тех, кто делает первые шаги в мире фронтенд-разработки.',
-    features: [
-      'Основы браузера и настройка окружения',
-      'HTML, CSS и SCSS',
-      'React 18 и основы компонентного подхода',
-      'Redux Toolkit (RTK)',
-      'TypeScript основы',
-      'Material-UI (MUI)',
-      'Git и основы командной работы',
-      'SCRUM и Agile-методологии',
-      'Составление резюме и подготовка к собеседованиям'
-    ],
-    result: 'После прохождения курса вы сможете уверенно работать с базовыми инструментами и технологиями, создать свое портфолио и быть готовым к собеседованиям на Junior позицию.'
-  },
-  {
-    title: 'Продвинутый (Middle Frontend Developer)',
-    price: '120 000',
-    description: 'Для тех, кто хочет углубить знания и перейти на уровень Middle разработчика.',
-    features: [
-      'Углубленное изучение Redux Toolkit и MobX',
-      'Webpack и Vite',
-      'ESLint и Prettier',
-      'Feature-Sliced Design (FSD)',
-      'React 18-19 углубленно',
-      'TypeScript продвинутый уровень',
-      'Паттерны проектирования',
-      'Оптимизация и рефакторинг',
-      'Доступ к эксклюзивным материалам'
-    ],
-    result: 'После прохождения курса вы сможете разрабатывать сложные веб-приложения, внедрять современные технологии и уверенно пройти собеседования на Middle позицию.',
-    isPopular: true
-  }
-];
+import { courses } from './PricingPage/data/courses';
 
 function InstallmentInfo() {
   return (
@@ -56,7 +19,7 @@ function InstallmentInfo() {
         <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
           <p className="text-sm text-gray-600 dark:text-gray-400">Junior курс</p>
           <p className="text-xl font-bold text-purple-600 dark:text-purple-400">
-            6 667 ₽/мес
+            5 000 ₽/мес
           </p>
         </div>
         <div className="bg-white dark:bg-gray-800 rounded-lg p-4">

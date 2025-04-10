@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageCircle, Send, AppWindow} from 'lucide-react';
-import Qrtg from '../../public/qrtg.png';
+import { sendToTelegram } from '../hooks/sendBot';
 
 const contactInfo = [
   {
@@ -13,22 +13,20 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    content: 'info@reactpro.ru',
-    link: 'mailto:info@reactpro.ru'
+    content: 'romain.muhametschin@yandex.ru',
+    link: 'mailto:romain.muhametschin@yandex.ru'
   },
 	{
     icon: AppWindow,
     title: 'Приложение FocusCourse',
     content: '@devcourse.ru',
-    link: 'https://t.me/devcourseru',
-		qrCode: Qrtg
+    link: 'https://webfre.github.io/tb-dv/',
   },
   {
     icon: MessageCircle,
     title: 'Telegram',
-    content: '@devcourse.ru',
-    link: 'https://t.me/devcourseru',
-		qrCode: Qrtg
+    content: 'Руководитель учебного направления',
+    link: 'https://t.me/romanwebfree',
   }
 ];
 
@@ -48,7 +46,8 @@ export function ContactsPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    const {name, email, message} = formData;
+    sendToTelegram(name, email, message);
   };
 
   return (
@@ -90,10 +89,6 @@ export function ContactsPage() {
                       {contact.content}
                     </p>
                   </div>
-									
-										{contact.qrCode && (
-											<img  className="hidden md:block"  style={{paddingLeft: '60px'}} width={200} src={Qrtg} alt="" title='Наведите камерой смартфона на qr-код для перехода в телеграмм канал' />
-										)}
                 </div>
               </motion.a>
             );

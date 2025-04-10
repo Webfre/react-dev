@@ -60,13 +60,13 @@ export function Footer2() {
               </ul>
             </div>
 
-            <div>
+            {/* <div>
               <h3 className="text-[#9e8dfd] mb-4 text-sm uppercase tracking-wider">Поддержка</h3>
               <ul className="space-y-2">
                 <li onClick={() => handleNavigate('/tg')}><a href="#" className="text-sm text-gray-400 hover:text-[#9333ea] transition-colors">Техническая поддержка</a></li>
                 <li onClick={() => handleNavigate('/infopay')}><a href="#" className="text-sm text-gray-400 hover:text-[#9333ea] transition-colors">Оплата</a></li>
               </ul>
-            </div>
+            </div> */}
           </div>
 
           {/* Social Links */}
